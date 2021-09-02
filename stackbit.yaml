@@ -1,0 +1,459 @@
+stackbitVersion: ~0.3.0
+dataDir: ''
+pagesDir: ''
+models:
+  archetype:
+    type: page
+    label: Archetype
+    folder: archetypes
+    match: '*'
+    fields:
+      - type: boolean
+        name: draft
+        label: Draft
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: slug
+        label: Slug
+  content:
+    type: page
+    label: Content
+    folder: exampleSite/content
+    match: '*'
+    fields: []
+  component:
+    type: page
+    label: Component
+    folder: exampleSite/content/components
+    match: '**/*'
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: image
+        name: image
+        label: Image
+      - type: string
+        name: imagecredit
+        label: Imagecredit
+      - type: list
+        name: ingredients
+        label: Ingredients
+        items:
+          type: string
+      - type: list
+        name: directions
+        label: Directions
+        items:
+          type: string
+  recipe:
+    type: page
+    label: Recipe
+    folder: exampleSite/content/recipes
+    match: '**/*'
+    fields:
+      - type: string
+        name: layout
+        label: Layout
+      - type: string
+        name: title
+        label: Title
+      - type: image
+        name: image
+        label: Image
+      - type: string
+        name: imagecredit
+        label: Imagecredit
+      - type: date
+        name: date
+        label: Date
+      - type: string
+        name: authorName
+        label: Author Name
+      - type: string
+        name: authorURL
+        label: Author URL
+      - type: string
+        name: sourceName
+        label: Source Name
+      - type: string
+        name: sourceURL
+        label: Source URL
+      - type: string
+        name: category
+        label: Category
+      - type: list
+        name: tags
+        label: Tags
+        items:
+          type: string
+      - type: number
+        name: yield
+        label: Yield
+        subtype: int
+      - type: number
+        name: prepTime
+        label: Prep Time
+        subtype: int
+      - type: number
+        name: cookTime
+        label: Cook Time
+        subtype: int
+      - type: list
+        name: ingredients
+        label: Ingredients
+        items:
+          type: string
+      - type: list
+        name: directions
+        label: Directions
+        items:
+          type: string
+      - type: string
+        name: cuisine
+        label: Cuisine
+      - type: list
+        name: components
+        label: Components
+        items:
+          type: string
+  config:
+    type: data
+    label: Config
+    file: exampleSite/config.yml
+    fields:
+      - type: string
+        name: baseURL
+        label: Base URL
+      - type: boolean
+        name: disablePathToLower
+        label: Disable Path To Lower
+      - type: string
+        name: languageCode
+        label: Language Code
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: theme
+        label: Theme
+      - type: string
+        name: defaultcontentlanguage
+        label: Defaultcontentlanguage
+      - type: number
+        name: paginate
+        label: Paginate
+        subtype: int
+      - type: boolean
+        name: canonifyurls
+        label: Canonifyurls
+      - type: string
+        name: pygmentsstyle
+        label: Pygmentsstyle
+      - type: boolean
+        name: pygmentscodefences
+        label: Pygmentscodefences
+      - type: boolean
+        name: pygmentscodefencesguesssyntax
+        label: Pygmentscodefencesguesssyntax
+      - type: string
+        name: pygmentsOptions
+        label: Pygments Options
+      - type: object
+        name: permalinks
+        label: Permalinks
+        fields:
+          - type: string
+            name: posts
+            label: Posts
+      - type: object
+        name: params
+        label: Params
+        fields:
+          - type: string
+            name: author
+            label: Author
+          - type: string
+            name: description
+            label: Description
+          - type: string
+            name: keywords
+            label: Keywords
+          - type: image
+            name: favicon_32
+            label: Favicon 32
+          - type: image
+            name: favicon_16
+            label: Favicon 16
+          - type: boolean
+            name: hidecredits
+            label: Hidecredits
+          - type: boolean
+            name: hidecopyright
+            label: Hidecopyright
+          - type: boolean
+            name: showNavTitle
+            label: Show Nav Title
+          - type: list
+            name: custom_css
+            label: Custom Css
+            items:
+              type: string
+      - type: object
+        name: menu
+        label: Menu
+        fields:
+          - type: list
+            name: main
+            label: Main
+            items:
+              type: object
+              fields:
+                - type: string
+                  name: name
+                  label: Name
+                - type: number
+                  name: weight
+                  label: Weight
+                  subtype: int
+                - type: string
+                  name: url
+                  label: Url
+      - type: object
+        name: taxonomies
+        label: Taxonomies
+        fields:
+          - type: string
+            name: category
+            label: Category
+          - type: string
+            name: cusine
+            label: Cusine
+          - type: string
+            name: tag
+            label: Tag
+  i_18_n:
+    type: data
+    label: I 18 N
+    folder: i18n
+    fields:
+      - type: object
+        name: yields
+        label: Yields
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: prepTime
+        label: Prep Time
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: cookTime
+        label: Cook Time
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: ingredients
+        label: Ingredients
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: directions
+        label: Directions
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: components
+        label: Components
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: this-is-a
+        label: This Is A
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: component-based-recipe
+        label: Component Based Recipe
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: fancy-talk
+        label: Fancy Talk
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: steps
+        label: Steps
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: category
+        label: Category
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: cuisine
+        label: Cuisine
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: tags
+        label: Tags
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: inspired
+        label: Inspired
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: by
+        label: By
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: from
+        label: From
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: powered-by
+        label: Powered By
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: for-the-home-chef
+        label: For The Home Chef
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: save-recipes
+        label: Save Recipes
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: create-beautiful
+        label: Create Beautiful
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: use-recipes
+        label: Use Recipes
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: our-favorite
+        label: Our Favorite
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: share
+        label: Share
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: for-the-developer
+        label: For The Developer
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: markdown-hugo
+        label: Markdown Hugo
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: recipes-stored
+        label: Recipes Stored
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: open-source
+        label: Open Source
+        fields:
+          - type: string
+            name: other
+            label: Other
+      - type: object
+        name: contribute
+        label: Contribute
+        fields:
+          - type: string
+            name: other
+            label: Other
+  gochowdown_scss_e_8_eb_91_dc_7_ad_840_ac_528020_d_02599262_d:
+    type: data
+    label: Gochowdown Scss E 8 Eb 91 Dc 7 Ad 840 Ac 528020 D 02599262 D
+    file: >-
+      resources/_gen/assets/scss/scss/gochowdown.scss_e8eb91dc7ad840ac528020d02599262d.json
+    fields:
+      - type: string
+        name: Target
+        label: Target
+      - type: string
+        name: MediaType
+        label: Media Type
+      - type: object
+        name: Data
+        label: Data
+        fields:
+          - type: string
+            name: Integrity
+            label: Integrity
